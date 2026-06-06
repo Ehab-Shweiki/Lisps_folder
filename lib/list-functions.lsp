@@ -1,0 +1,6 @@
+(defun group-flat (lst n / result)
+  (setq result '())
+  (while (>= (length lst) n)
+    (setq result (cons (list (car lst) (cadr lst) (caddr lst)) result))
+    (setq lst (cdddr lst)))
+  (reverse result))

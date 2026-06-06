@@ -1,0 +1,5 @@
+(defun proj-on-line (pt p0 dir / u t1)
+  (setq u (vunit dir))
+  (setq t1 (vdot (v- pt p0) u))
+  (v+ p0 (v* u t1))
+)

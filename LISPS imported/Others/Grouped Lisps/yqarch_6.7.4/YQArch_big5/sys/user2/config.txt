@@ -1,0 +1,315 @@
+;==================================================================================================
+; 「源泉設計」 用戶系統配置文件 config.txt
+;--------------------------------------------------------------------------------------------------
+; 註：● config.txt位於「sys\用戶文件夾」中，請按照自己的使用習慣修改設置值；
+;     ● 用命令yq_setuser切換當前用戶，不同的用戶可以擁有各自的 config.txt 文件；
+;     ● 分號";"後的文字是註釋，可以忽略或刪除；
+;     ● 正文行 等號"=" 前的文字是索引鍵，不能修改；
+;     ● 正文行 等號"=" 後為設置值，可以自行修改；
+;     ● 行的順序可以重新自由編排。
+;==================================================================================================
+
+;*********************************** 系統設定 YQARCH SYSTEM SETTINGS ******************************
+
+LANGUAGE                 = 1          ;【當前語言】0:English 1:中文
+YQARCH_MENU              = yes        ;【是否顯示源泉菜單欄】值範圍是 yes/no (缺省yes)
+YQARCH_SHORTCUT_PRIORITY = no         ;【源泉快捷鍵優先級是否超越acad.pgp】值範圍是 yes/no (缺省no)
+YQARCH_SEARCHPATH_TOP    = yes        ;【AutoCAD搜索路徑中自動前置源泉】值範圍是 yes/no (缺省no)
+DRAWING_SCALE_LIST       = 0,1,2,3,4,5,6,8,10,15,20,25,30,40,50,60,75,80,100,120,150,200,250,300,400,500,600,1000,2000,5000,10000
+                                      ;【常用圖紙比例】設定(以毫米圖為準,厘米圖自動降)
+DRAWING_UNITS            =            ;【缺省圖紙單位】填空則不改 0:無單位/1:英吋/4:毫米/5:厘米/14:分米/6:米
+DRAWING_SCALE            =            ;【缺省圖紙比例】填空則不改 100表示1:100
+
+;********************************* 通用圖層設定 GENERAL LAYER SETTINGS ****************************
+
+AXIS_LAYER_NAME          = DOTE       ;【軸線層名】不能空, 用於自動佈置柱子及自動佈置軸號尺寸時作定位
+AXIS_LAYER_COLOR         = 1          ;【軸線層顏色】所有層顏色值的範圍都是 1-255
+AXIS_LAYER_LINETYPE      = CENTER     ;【軸線層線型】請選擇AutoCAD自帶線型
+
+VIEWPORT_LAYER_NAME      = VIEWPORT   ;【新視口層名】層名可填空，表示使用當前層、忽略層顏色，下同
+VIEWPORT_LAYER_COLOR     = 181        ;【新視口層顏色】所有層顏色值的範圍都是 1-255
+VIEWPORT_LAYER_PRINT     = yes        ;【視口層是否打印】值範圍是 yes/no (缺省yes)
+DWGRANGE_LAYER_NAME      = RANGE      ;【圖幅分隔線層名】
+DWGRANGE_LAYER_COLOR     = 6          ;【圖幅分隔線層顏色】
+
+ORDINARY_LAYER_NAME      = LINE       ;【普通看線層名】
+ORDINARY_LAYER_COLOR     = 2          ;【普通看線層顏色】
+STAIR_LAYER_NAME         = STAIR      ;【樓梯層名】
+STAIR_LAYER_COLOR        = 2          ;【樓梯層顏色】
+
+SANITARY_LAYER_NAME      = SANITARY   ;【潔具層名】
+SANITARY_LAYER_COLOR     = 151        ;【潔具層顏色】
+TILING_LAYER_NAME        = TILING     ;【鋪設磚石層名】
+TILING_LAYER_COLOR       = 8          ;【鋪設磚石層顏色】
+
+FURNITURE_LAYER_NAME     = FURNITURE  ;【活動傢俱層名】
+FURNITURE_LAYER_COLOR    = 53         ;【活動傢俱層顏色】
+FURNITURE_HATCH_LAYER    = FURHATCH   ;【活動傢俱填充層名】                  (新添 ●●2019/5/31)
+FURNITURE_HATCH_COLOR    = 57         ;【活動傢俱填充層顏色】
+
+FIXEDFURNITURE_LAYER_NAME     = FFURNITURE  ;【固定傢俱層名】                (新添 ●●●2021/5/14)
+FIXEDFURNITURE_LAYER_COLOR    = 53          ;【固定傢俱層顏色】              (可填與活動傢俱層一樣)
+FIXEDFURNITURE_HATCH_LAYER    = FFHATCH     ;【固定傢俱填充層名】
+FIXEDFURNITURE_HATCH_COLOR    = 57          ;【固定傢俱填充層顏色】
+
+WOOD_LAYER_NAME          = WD         ;【木材層名】
+WOOD_LAYER_COLOR         = 52         ;【木材層顏色】
+WOOD_HATCH_LAYER         = WDHATCH    ;【木材填充層名】                      (新添 ●●2019/5/31)
+WOOD_HATCH_COLOR         = 8          ;【木材填充層顏色】
+
+ALUMINIUM_LAYER_NAME     = AL         ;【鋁合金層名】
+ALUMINIUM_LAYER_COLOR    = 4          ;【鋁合金層顏色】
+ALUMINIUM_HATCH_LAYER    = ALHATCH    ;【鋁合金填充層名】                    (新添 ●●2019/5/31)
+ALUMINIUM_HATCH_COLOR    = 8          ;【鋁合金填充層顏色】
+
+STEEL_LAYER_NAME         = MT         ;【不銹鋼/鐵層名】                     (新添 ●●2019/6/4)
+STEEL_LAYER_COLOR        = 4          ;【不銹鋼/鐵層顏色】
+STEEL_HATCH_LAYER        = MTHATCH    ;【不銹鋼/鐵填充層名】
+STEEL_HATCH_COLOR        = 8          ;【不銹鋼/鐵填充層顏色】
+
+LIGHTSTEEL_LAYER_NAME    = LS         ;【輕鋼龍骨層名】                      (新添 ●●2019/6/4)
+LIGHTSTEEL_LAYER_COLOR   = 4          ;【輕鋼龍骨層顏色】
+
+SHUTTER_LAYER_NAME       = SHUTTER    ;【百葉層名】                          (新添 ●●2019/6/4)
+SHUTTER_LAYER_COLOR      = 134        ;【百葉層顏色】
+SHUTTER_HATCH_LAYER      = SHTRHATCH  ;【百葉填充層名】
+SHUTTER_HATCH_COLOR      = 8          ;【百葉填充層顏色】
+
+GLASS_LAYER_NAME         = GL         ;【玻璃層名】                          (新添 ●●2019/6/3)
+GLASS_LAYER_COLOR        = 171        ;【玻璃層顏色】
+GLASS_HATCH_LAYER        = GLHATCH    ;【玻璃填充層名】
+GLASS_HATCH_COLOR        = 8          ;【玻璃填充層顏色】
+
+GYPSUM_LAYER_NAME        = GYP        ;【石膏板層名】                        (新添 ●●2019/6/3)
+GYPSUM_LAYER_COLOR       = 52         ;【石膏板層顏色】
+GYPSUM_HATCH_LAYER       = GYPHATCH   ;【石膏板填充層名】
+GYPSUM_HATCH_COLOR       = 8          ;【石膏板填充層顏色】
+
+STONE_LAYER_NAME         = ST         ;【石材層名】                          (新添 ●●2019/6/3)
+STONE_LAYER_COLOR        = 52         ;【石材層顏色】
+STONE_HATCH_LAYER        = STHATCH    ;【石材填充層名】
+STONE_HATCH_COLOR        = 8          ;【石材填充層顏色】
+
+;*********************************** 平面牆設定 WALL SETTINGS *************************************
+
+WALL_LAYER_LIST = COLUMN,40,WALL,7,wall1,2,WALL2,4         ;【牆層列表】優先級按列表順序,牆層數不限
+                           ; 格式: 混凝土牆層名稱,層顏色,普通牆層名稱,層顏色,次牆層名稱,層顏色...等
+WALL_LAYER_NAME          = WALL       ;【當前牆層名】此名需要在上述列表中
+WALL_FILL_LAYER_NAME     = WALL_FILL  ;【牆填充層名】牆內部填充所在層的層名
+WALL_FILL_LAYER_COLOR    = 8          ;【牆填充層顏色 】
+WALL_THICKNESS_LIST      = 50,60,90,100,120,140,150,180,200,240,250,300,360,480
+                                      ;【牆厚表】(單位:毫米, 台灣用戶也需填實際毫米數)
+                                      ;  只有這些牆厚的牆能在門/窗/牆/柱的程序中被識別修剪
+WALL_DEFAULT_THICKNESS   = 200        ;【缺省牆厚】(單位:毫米) 此數值一定要在上述牆厚表中
+
+WALL_PIER_WIDTH_LIST = 0,50,60,100,120,200,240,300,400,500,600,700,800,900,1000
+                                      ;【牆跺寬度表】(單位:毫米) 在門窗程序中供選擇用的牆跺寬度列表
+WALL_HOLE_WIDTH_LIST = 600,700,750,800,850,900,1000,1100,1200,1500,1600,1800,2000,2100,2400,3000,3200,3600,5400
+                                      ;【牆洞寬度表】(單位:毫米) 在門窗程序中供選擇用的牆洞寬度列表
+
+;*********************************** 平面柱子設定 COLUMN SETTINGS *********************************
+
+COLUMN_BOUNDARY_LAYER_NAME    = COLUMN    ;【柱子外框層名】
+COLUMN_BOUNDARY_LAYER_COLOR   = 31        ;【柱子外框層顏色】
+COLUMN_BOUNDARY_THICKNESS     = 0         ;【柱子外框線寬度 】(單位:毫米) 柱子外框復線的寬度
+COLUMN_FILL_LAYER_NAME        = COL_FILL  ;【柱子填充層名】柱子內部填充所在層的層名
+COLUMN_FILL_LAYER_COLOR       = 8         ;【柱子填充層顏色 】
+COLUMN_AUTO_FILL_IN           = yes       ;【是否自動填充柱子】值範圍是 yes/no (缺省no)
+COLUMN_AUTO_TRIM              = yes       ;【是否自動修剪柱子內部牆體】值範圍是 yes/no (缺省no)
+
+;*********************************** 平面門窗設定 WINDOW/DOOR SETTINGS ****************************
+
+DOOR_LAYER_NAME          = WINDOW                ;【門層名 】若門窗不想分層，可設置為同名、同色
+DOOR_LAYER_COLOR         = 134                   ;【門層顏色】
+DOOR_LEAF_WIDTH_LIST     = 1499,2399,3199,4799   ;【門扇數自動變換最大寬度列表】(單位:毫米)
+                                                 ; 1扇門寬,2扇門寬,3扇門寬,4扇門寬,其他6扇門寬
+DOORSILL_LAYER_NAME      = SILL                  ;【門檻線層名 】 不能與門窗同層
+DOORSILL_LAYER_COLOR     = 8                     ;【門檻線層顏色】
+
+;以下是門套門設置
+DOORPOCKET_LAYER_NAME    = 0                     ;【門套層名】隨圖塊層可填0
+DOORPOCKET_LAYER_COLOR   = 7                     ;【門套層顏色】
+DOORLEAF_LAYER_NAME      = LEAF                  ;【門扇層名】隨圖塊層可填0
+DOORLEAF_LAYER_COLOR     = 134                   ;【門扇層顏色】
+OPENINGLINE_LAYER_NAME   = OPENING               ;【開啟線層名】不填則同門扇層
+OPENINGLINE_LAYER_COLOR  = 8                     ;【開啟線層顏色】
+DOOR_POCKET_PARAMETERS   = 50,15,10              ;【門套尺寸參數】(單位:毫米) 
+                                                 ;  參數:門套夾板厚,止口寬,線條退後寬
+                                                 
+WINDOW_LAYER_NAME        = WINDOW                ;【窗層名 】
+WINDOW_LAYER_COLOR       = 134                   ;【窗層顏色】
+WINDOWLEAF_LAYER_NAME    = LEAF                  ;【窗扇層名 】
+WINDOWLEAF_LAYER_COLOR   = 134                   ;【窗扇層顏色】
+WINDOW_TEXT_LAYER_NAME   = WINDOW_TEXT           ;【門窗編號圖層名】
+WINDOW_TEXT_LAYER_COLOR  = 7                     ;【門窗編號層顏色】
+DEFAULT_DOOR             = dr_d01.dwg            ;【缺省門圖塊】可按編號自動變換門扇數
+DEFAULT_WINDOW           = wd_win4.dwg           ;【缺省窗圖塊】(普通窗還可以使用)
+
+;*********************************** 尺寸標注設定 DIMENSION SETTINGS ******************************
+
+YQARCH_DIMENSTION_STYLE = yes    ;【是否自動設置及使用源泉標注樣式】(缺省yes)
+YQARCH_DIMENSTION_LAYER = yes    ;【不用源泉標注樣式時仍使用源泉標注圖層】(缺省no)
+DIMENSION_STYLE_PREFIX  = yq     ;【尺寸標注樣式名前綴】
+DIMENSION_FIX_PSSCALE   = yes    ;【在圖紙空間固定標注比例】值範圍是 yes/no (缺省yes)
+DIMENSION_FORCE_2D      = yes    ;【自動拍平標注】值範圍是 yes/no (缺省yes)
+
+DIMENSION_LAYER_LIST  = YQ_DIM,74,YQ_DIM2,134,YQ_DIM3,214,YQ_DIM4,14  ;【尺寸標注層列表】層數不限
+                                 ; 格式: 標注圖層1名稱,層顏色,層2名稱,層顏色,層3名稱,層顏色...等
+DIMENSION_LAYER_NAME  = YQ_DIM   ;【尺寸標注當前層名】此名需要在上述列表中
+DIMENSION_DIMLINE_COLOR  = 256   ;【尺寸主線顏色】顏色值範圍是1-256, 跟隨所在圖層顏色填256或置空
+DIMENSION_EXTLINE_COLOR  = 256   ;【尺寸界線顏色】顏色值範圍是1-256, 跟隨所在圖層顏色填256或置空
+
+DIMENSION_TEXT_COLOR  = 7        ;【尺寸標注文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256或置空
+DIMENSION_TEXT_STYLE  = YQ_DIM   ;【尺寸標注文字樣式名】必須有
+DIMENSION_TEXT_FONTS  = superos.shx,hzdx.shx             ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                 ;【尺寸標注文字字體組合】字體組合格式: 英文字體.shx,中文字體.shx
+                                 ; 若用Windows系統的細明體/黑體/隸書/仿宋/楷體/幼圓,可按以下填(填1個):
+                                 ; 細明體/黑體/隸書/仿宋/楷體/幼圓
+                                 ; 也可以用AutoCAD自帶的 gbenor.shx,gbcbig.shx
+DIMENSION_TEXT_HEIGHT    = 3     ;【尺寸標注文字高度】(單位:毫米) 指最終打印輸出的高度, 必須有
+                                 ;  若選superos.shx，字體稍小,3mm實際約等於2.5mm
+DIMENSION_TEXT_ASPECT    = 0.8   ;【尺寸標注文字寬高比】必須有
+DIMENSION_BASELINE_SPACING = 6   ;【基線標注中尺寸線間的間距】(單位:毫米)
+DIMENSION_FIRST_BASELINE = 6     ;【自動標注時，第一條尺寸線間距】(單位:毫米)
+DIMENSION_ORIGIN_OFFSET  = 3     ;【尺寸界線偏離原點(腳點)的距離】(單位:毫米)
+DIMENSION_EXTEND_LENGTH  = 1.5   ;【尺寸界線超出尺寸線的距離】
+DIMENSION_TEXT_GAP       = 0.5   ;【文字與尺寸線的空隙】(單位:毫米)
+DIMENSION_EXTLINE_FIXLENGTH = 0  ;【固定尺寸界線的長度】(單位:毫米)(缺省0)
+                                 ;  填0表示不固定尺寸界線的長度
+
+DIMENSION_ARROW_BLOCK = yqtick   ;【尺寸標注箭頭塊名】yqtick 是源泉缺省值
+                                 ;  也可使用AutoCAD的: _ARCHTICK/_Dot 等，空置為箭頭
+DIMENSION_DIMLINE_EXTENSION  = 0 ;【尺寸線兩端超出尺寸界線的距離】(缺省0) 
+                                 ;  箭頭塊是系統短斜線(如:_ARCHTICK)時才起作用
+DIMENSION_ARROW_SIZE   = 1       ;【箭頭塊名的尺寸】(單位:毫米)
+DIMENSION_LEADER_BLOCK = .       ;【缺省引線箭頭塊名】.為AutoCAD缺省值箭頭,源泉引線不用此塊
+
+DIMENSION_DECIMAL_DIGITS = 0,1,2,3,1  ;【標注及輸出表格在各種單位下的保留小數位】(缺省：0,1,2,3,1)
+                                 ; 5個數字分別對應於在(毫米,厘米,分米,米,英吋)時保留的小數位數
+DIMENSION_ROUNDING       = 0     ;【數字捨入精度】(缺省0:為自動),可輸入5/1/0.5等
+                                 ;  注: 如果設置此精度，要與上一行保留小數位配合才有意義
+DIMENSION_FOLLOWING_ZERO = no    ;【是否保留標注數字小數點後續0】(缺省no)
+DIMENSION_ANGLE_DIGITS = 1       ;【角度標注保留小數位】
+
+DIMENSION_DIMTAD = 1             ;【控制文字相對於尺寸線的垂直位置】(缺省1: 文字放置在尺寸線上方) (新添 ●●2020/5/11)
+DIMENSION_DIMARCSYM = 0          ;【弧長符號放置位置】(缺省0:弧長符號在文字前面) 1:上面 2:無 (新添 ●●2020/12/2)
+
+;********************************* 標高設定 SYMBOL ELEVATIO SETTINGS ******************************
+
+SYMBOL_ELEVATION_LAYER_NAME   = YQ_ELEV   ;【標高層名】層名不可填空
+SYMBOL_ELEVATION_LAYER_COLOR  = 150  ;【標高層顏色】
+SYMBOL_ELEVATION_ARROW_HEIGHT = 3    ;【標高符號小三角垂直高度】(單位:毫米) 指最終打印輸出的高度
+SYMBOL_ELEVATION_TEXT_COLOR   = 256  ;【標高文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256
+SYMBOL_ELEVATION_TEXT_STYLE   = YQ_ELEV   ;【標高文字樣式名】
+SYMBOL_ELEVATION_TEXT_FONTS   = superos.shx,hzdx.shx     ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                     ;【標高文字字體組合】字體組合
+SYMBOL_ELEVATION_TEXT_ASPECT  = 0.8  ;【標高文字寬高比】
+SYMBOL_ELEVATION_TEXT_HEIGHT  = 3.5  ;【標高文字高度】(單位:毫米) 指最終打印輸出的高度
+
+;********************************* 坐標設定 SYMBOL COORDINATE SETTINGS ****************************
+
+SYMBOL_COORDINATE_LAYER_NAME  = YQ_COOR  ;【坐標層名】層名不可填空
+SYMBOL_COORDINATE_LAYER_COLOR = 200  ;【坐標層顏色】
+SYMBOL_COORDINATE_TEXT_COLOR  = 256  ;【坐標文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256
+SYMBOL_COORDINATE_TEXT_STYLE  = YQ_COOR    ;【坐標文字樣式名】
+SYMBOL_COORDINATE_TEXT_FONTS  = superos.shx,hzdx.shx     ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                     ;【坐標文字字體組合】字體組合
+SYMBOL_COORDINATE_TEXT_ASPECT = 0.8  ;【坐標文字寬高比】
+SYMBOL_COORDINATE_TEXT_HEIGHT = 3.5  ;【坐標文字高度】(單位:毫米) 指最終打印輸出的高度
+
+;********************************* 軸號設定 SYMBOL AXIS SETTING ***********************************
+
+SYMBOL_AXIS_LAYER_NAME    = YQ_AXIS  ;【軸號層名】層名不可填空
+SYMBOL_AXIS_LAYER_COLOR   = 74       ;【軸號層顏色】
+SYMBOL_AXIS_TEXT_COLOR    = 256      ;【軸號文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256
+SYMBOL_AXIS_TEXT_STYLE    = YQ_AXIS  ;【軸號文字樣式名】
+SYMBOL_AXIS_TEXT_FONTS    = complex.shx,gbcbig.shx       ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                     ;【軸號文字字體組合】
+SYMBOL_AXIS_TEXT_HEIGHT   = 4.5      ;【軸號文字高度】(單位:毫米) 指最終打印輸出的高度
+SYMBOL_AXIS_TEXT_JUSTIFY  = center   ;【軸號文字對正方式】(fit:定寬,缺省/center:中心)
+SYMBOL_AXIS_TEXT_ASPECT   = 0.8      ;【軸號文字寬高比】填空則為1
+SYMBOL_AXIS_DIM_DISTANCE  = 15       ;【軸號中腳點到尺寸線間距】(單位:毫米)
+SYMBOL_AXIS_DIM_EXTEND    = 4        ;【軸號到尺寸線間距】(單位:毫米)
+SYMBOL_AXIS_RADIUS        = 4        ;【軸號圓半徑】(單位:毫米)
+SYMBOL_AXIS_LETTERS       = ABCDEFGHJKLMNPQRSTUVWXY   ;【軸號允許字母】
+
+;************************** 索引標識號設定 SYMBOL IDENTIFIER SETTING ******************************
+; 註：圖塊形式的標識符請直接修改 symbols.dwg 文件, 沒有 symbols.dwg 時，圖層顏色等設定才起作用
+
+SYMBOL_IDENTIFIER_LAYER_NAME  = YQ_IDEN  ;【索引標識層名】層名不可填空
+SYMBOL_IDENTIFIER_LAYER_COLOR = 74   ;【索引標識層顏色】
+SYMBOL_IDENTIFIER_TEXT_COLOR  = 7    ;【索引標識文字顏色】顏色值範圍是1-256, 跟隨所在圖層顏色填256
+SYMBOL_IDENTIFIER_TEXT_STYLE  = YQ_IDEN                  ;【索引標識文字樣式名】
+SYMBOL_IDENTIFIER_TEXT_FONTS  = complex.shx,gbcbig.shx   ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                     ;【索引標識文字字體組合】
+SYMBOL_IDENTIFIER_TEXT_HEIGHT = 4.5  ;【索引標識文字高度】(單位:毫米)      (目前只有平面剖切符用到)
+
+SYMBOL_IDENTIFIER_TEXT_JUSTIFY = fit ;【圓索引號文字對正方式】(fit:定寬,缺省/center:中心)
+SYMBOL_IDENTIFIER_TEXT_ASPECT  = 1   ;【圓索引號主文字寬高比】對正方式不為fit才起作用,填空則為1
+SYMBOL_IDENTIFIER_TEXT2_ASPECT = 0.6 ;【圓索引號下文字寬高比】對正方式不為fit才起作用,填空則為0.6
+
+SYMBOL_IDENTIFIER_RADIUS       = 5   ;【圓索引號半徑】(單位:毫米) 原值:5
+SYMBOL_IDENTIFIER_TITLE_RADIUS = 7   ;【標題圓索引號半徑】(單位:毫米) 原值:7
+SYMBOL_IDENTIFIER_ELLIPSE      = 10  ;【橢圓材料索引號長度】(單位:毫米) 原值:10
+SYMBOL_IDENTIFIER_RECTANGLE    = 14  ;【矩形材料索引號長度】(單位:毫米) 原值:14
+
+SYMBOL_INDEXBOX_PARAMETERS = HIDDEN,15,0.5,0.4,4 ;【矩形/圓形引出框參數】原值:HIDDEN,15,0.5,0.4,4
+    ; 參數:線型名稱,模型空間線型比例,圖紙空間線型比例,線寬,矩形框倒圓角半徑
+                                          
+;******************************* 引線箭頭設定 LEADER ARROW SETTING ********************************
+
+LEADER_ARROW_SIZE         = 2        ;【引線箭頭大小】(單位:毫米)
+
+;******************************* 其他符號層設定 OTHER SYMBOL SETTINGS  ****************************
+
+SYMBOL_LAYER_NAME         = YQ_SYMB  ;【其他符號層名】層名不可填空
+                                     ;  暫時只用在折斷線、對稱軸、中心線等符號
+SYMBOL_LAYER_COLOR        = 74       ;【其他符號層顏色】
+
+;********************************* 一般說明註釋設定 COMMENT SETTINGS  *****************************
+
+COMMENT_LAYER_NAME        = YQ_TEXT  ;【說明註釋層名】層名不可填空
+COMMENT_LAYER_COLOR       = 6        ;【說明註釋層顏色】所有層顏色值的範圍都是 1-255
+COMMENT_TEXT_COLOR        = 256      ;【說明註釋文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256
+COMMENT_TEXT_STYLE        = YQ_TEXT  ;【說明註釋文字樣式名】樣式名可填空，表示使用當前樣式
+COMMENT_TEXT_FONTS        = superos.shx,hzdx.shx         ; 可選: gbenor.shx,gbcbig.shx ; 可選: 黑體
+                                     ;【說明註釋文字字體組合】
+COMMENT_TEXT_HEIGHT       = 3.5      ;【說明註釋文字高度】(單位:毫米) 
+                                     ;  指最終打印輸出的高度
+COMMENT_TEXT_GAP          = 1        ;【文字與箭頭引線的空隙】(單位:毫米)
+COMMENT_TEXT_ASPECT       = 0.8      ;【說明註釋文字寬高比】填空則為1
+COMMENT_TEXT_ROW_SPACING  = 1.38     ;【文字行距高度比】外掛文字編輯器增加行數時使用此值
+                                     ;  一般SHX字庫為1.38，TTF字庫為2
+SQUARE_METER_STRING       = m%%142   ;【平方米符號】平方米符號在字串中的寫法
+                                     ; (superos.shx用m%%142, 細明體用m\u+00b2)
+UNITS_LIST = m,M,m2,M2,mm,MM,方,度,米,毫米,厘米,平方,平方米,%%d,m%%142,m\U+00B2,m\U+00B3,m\u+00b2,m\u+00b3
+                                     ;【單位符號表】如果數字串中含有這些單位後綴,不影響加減乘除數學計算
+
+;******************************** 標題文字設定 DRAWING TITLE SETTINGS  ****************************
+
+TITLE_LAYER_NAME          = YQ_TITLE ;【標題文字層名】層名不可填空
+TITLE_LAYER_COLOR         = 6        ;【標題文字層顏色】所有層顏色值的範圍都是 1-255
+TITLE_TEXT_COLOR          = 256      ;【標題文字顏色】圖元顏色值範圍是1-256, 跟隨所在圖層顏色填256
+TITLE_TEXT_STYLE          = YQ_TITLE ;【標題文字樣式名】樣式名可填空，表示使用當前樣式
+TITLE_TEXT_FONTS          = 黑體     ;【標題文字字體組合】
+TITLE_TEXT_HEIGHT         = 5    ;【標題文字高度】(單位:毫米) 指最終打印輸出的高度，填空則用當前字高
+TITLE_TEXT_ASPECT         = 1    ;【標題文字寬高比】填空則為1
+
+;*********************************** 其他設定  OTHER SETTINGS  ************************************
+
+DYNAMIC_COMMANDS          = yes  ;【是否使用動態命令】(缺省yes)
+BLOCKVIEWER_36THUMBNAILS  = no   ;【圖庫管理使用36個縮略圖】(缺省no,25個縮略圖) (新添 ●●2019/3/26)
+DOUBLELINE_THICKNESS_LIST = 0,10,15,20,25,30,40,50,60,80,90,100,120,140,150,180,200 ;【雙線厚度表】
+AUTO_REPLACE_FONTS        = SUPEROS.SHX,HZDX.SHX,細明體    ;【設置自動替換文字檔】
+                                 ; (格式："英文字體.SHX,中文字體.SHX,TTF字體[.TTF]")
+LINETYPE_SCALE_FACTOR     = 0    ;【線型的圖紙比例係數】此係數用於設定「全局線型比例因子ltscale」
+                                 ;  的值, 即：系統變量ltscale的值＝此係數×圖紙比例
+                                 ;  若填0或留空則不自動設定ltscale的值
+TEXT_EDITER_FULLNAME      =      ;【文本編輯器全路徑】填空則為WINDOWS內置筆記本
+
+EXCEL_FULLNAME            =      ;【Execl全路徑】正常時請空置
+                                 ;   如:C:\Program Files\Microsoft Office\Office11\Excel.exe
+WPSET_FULLNAME            =      ;【WPS表格全路徑】正常時請空置
+                                 ;   如:C:\Users\Administrator\AppData\Local\Kingsoft\WPS Office\10.1.0.5554\office6\et.exe
+DOUBLECLICK_COMMAND       = ESC  ;【鼠標雙擊時命令串】2015以後可能要四擊
+                                 ;  例子：發動總覽命令填:YQARCH; 取消當前選擇集填:ESC; 填空不設置

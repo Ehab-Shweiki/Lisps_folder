@@ -1,0 +1,5 @@
+(defun count-decimals (s)
+  (if (and (setq pos (vl-string-search "." s))
+           (< pos (strlen s)))
+    (- (strlen s) (1+ pos))
+    0))

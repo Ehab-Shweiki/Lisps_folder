@@ -1,0 +1,13 @@
+https://www.youtube.com/watch?v=hVoGV_ntCJ8&ab_channel=DeepakVermaCADSoftwares
+
+steps:
+ - add paths to Support File Search Path for:
+	..\sys
+	..\sys\fonts
+	..\sys\user1
+ - restart autocad
+ - Change language:
+	- open config file by: 
+     		pluggin tab -> first - first icon   or explore: \sys\user1\config.txt
+	- change value to 0 "language = 0"
+  

@@ -1,0 +1,40 @@
+;;;==========================================================================================
+;;; 「源泉設計」 用戶預定圖層文件 layers.txt
+;;;------------------------------------------------------------------------------------------
+;;; 註：● 本文件請放置在 sys\用戶文件夾，並按照自己的繪圖習慣修改圖層列表；
+;;;     ● 用命令 ern 可按此表新建圖層；
+;;;     ● 用命令 erc 可調出此列表以替換圖中已有圖層；
+;;;     ● 分號";"後面是註釋，行首加分號則暫時取消該行。
+;;;==========================================================================================
+;;; 格式: 圖層名稱,顏色號(1-255),線型名稱,線寬,是否打印該層(yes/no),說明
+
+0,7,Continuous,,yes,
+1,1,Continuous,,yes,
+2,2,Continuous,,yes,
+3,3,Continuous,,yes,
+4,4,Continuous,,yes,
+5,5,Continuous,,yes,
+6,6,Continuous,,yes,
+7,7,Continuous,,yes,
+8,8,Continuous,,yes,
+9,9,Continuous,,yes,
+COLUMN,7,Continuous,,yes,
+COL_FILL,8,Continuous,,yes,
+DOTE,1,CENTER,,yes,
+FURNITURE,53,Continuous,,yes,
+NOPRINT,1,HIDDEN,,no,不打印
+SANITARY,151,Continuous,,yes,
+STAIR,2,Continuous,,yes,
+TILING,8,Continuous,,yes,
+WALL,7,Continuous,,yes,
+WALL_FILL,8,Continuous,,yes,
+WINDOW,2,Continuous,,yes,
+WOOD,2,Continuous,,yes,
+YQ_AXIS,74,Continuous,,yes,
+YQ_COOR,200,Continuous,,yes,
+YQ_DIM,3,Continuous,,yes,
+YQ_ELEV,150,Continuous,,yes,
+YQ_IDEN,3,Continuous,,yes,
+YQ_SYMB,3,Continuous,,yes,
+YQ_TEXT,6,Continuous,,yes,
+YQ_TITLE,6,Continuous,,yes,

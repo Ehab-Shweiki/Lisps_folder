@@ -1,0 +1,181 @@
+;;; [源泉設計]-[用戶組合命令面板]定義文件，最多可以定義20個面板
+;;;   源泉設計的命令完整名稱，可參閱sys\yqshortcut.txt
+;;;
+;;;   標題行格式: ******中文標題,英文標題,每列n個按鈕(小於等於28個),面板快捷鍵
+;;;   類別行格式: ****中文標題,英文標題
+;;;   命令行格式: 命令中文名,命令英文名,原始命令(或lisp程序),快捷鍵(可空置)
+;;;               註：命令行第4項為快捷鍵,可空置。如果設置,優先級強於總覽命令的快捷鍵
+;;;                   此文件由用戶自己設置，源泉不再更新
+
+
+;;;
+******[雜項面板快捷鍵u1],[Misc Panel u1],26,u1
+;;;   --主要用於設置Q5/Q6/Q7面板的快捷鍵, 可自己按需要添加--
+
+
+****【設置/修改/複製】,[Settings/Modify/Copy]
+插入日期時間字串,Date String,yq_date,day            ; ----->這是快捷鍵例子: 加上",day",這裡day是快捷鍵
+Excel表格轉入,Excel Import,yq_excel2table,e2t
+保存/還原捕捉,Save/Restore OSmode,yq_osmode,oos
+,,
+次數複製,Copy & Array,yq_cm,cn
+內等分複製,Copy & Divide Insided,yq_copydivide,cdf
+,,
+複製旋轉對齊,Copy and Rotate,yq_copyandrotate,xzc
+可鏡像的複製,Copy and Mirror,yq_xcopy,yc
+等分角度,Divide Angle,yq_angledivide,dfa
+,,
+動態修剪,Dynamic Trim,yq_dynamictrim,tv
+動態延伸,Dynamic Extend,yq_dynamicextend,exv
+改為定長,Lengthen Object,yq_len,lenx
+,,
+填充拉伸,Hatch Strecth,yq_hhs,hhs
+
+****【曲線/圖元】,[Pline/Entity]
+多段線擠出,Extrude a pline,yq_plineextrude,jc
+複製多段線的一段,Copy a Pline Segment,yq_copysegment,xxcc
+等分多段線的一段,Divide a Pline Segment,yq_dividesegment,xxdf
+交點間隔打斷,Interval Break,yq_break_interval,bjx
+,,
+圓弧等分曲線,Spline/Ellipse to Arc Pline,yq_s2a,s2a
+線段等分曲線,Spline/Ellipse to line Pline,yq_s2x,s2x
+,,
+整數矩形,Integer Rectangle,yq_irectangle,recz
+三點矩形,3 Point Rectangle,yq_rect3pt,rec3
+四邊形對角線,Quads to Diagonals,yq_diagonal,djx
+畫格內線,Draw Inside Line,yq_insideline,rx            ; ----->這是快捷鍵例子: 加上",rx",這裡rx是快捷鍵
+定角構造線,Angle Xline,yq_anglexline,gzx
+選線畫平滑連接弧,Append Arc,yq_appendarc,aj
+,,
+文字沿曲線放置,Text Along Curve,yq_text2curve,tt2c
+
+****【標注/圖塊】,[Dim/Block]
+切換固定圖紙空間比例,Switch PS Dimscale,yq_fixpsdimscale,ddps
+懶人標注,Auto DIM,yq_dim_auto,ddc
+標注多邊形內角,DIM Polygon Angles,yq_dim_polygonangles,ddans
+標注批量圓弧長,DIM Arcs Length,yq_dim_arcs,ddars
+0長度標注刪除,Erase 0 Length DIM,yq_dim_del0,dde0
+標注傾斜,DIM Slope,yq_dim_slope,ddo
+尺寸驅動的拉伸,Strech by Dimension,yq_dimstretch,sdd
+選尺寸畫對齊線,Dimensions to Lines,yq_dim2lines,dd2x
+,,
+炸塊屬性轉文字,Exp. Att Blk,yq_expattblk,bbxt
+替換塊內顏色,Replace color in block,yq_blockchcolor,bbcc
+,,
+炸開參照塊,Explode Reference Block,yq_refx,refx
+參照塊改相對路徑,Xref to Relative,yq_xref2rel,xf2r
+參照塊改絕對路徑,Xref to Absolute,yq_xref2abs,xf2a
+
+****【特殊】,[Extra]
+幾個關聯開關,Relations Switches,yq_relswitch,gl
+,,
+快速切割圖像,Clip Image,yq_qgtx,qgtx
+拆分圖像,Image Splitting,yq_imagesplit,cftx
+拆分板材,Board Splitting,yq_boardsplit,cfb
+,,
+繪製墊塊,Heel Block,yq_heelblock,dk
+畫凹縫,Draw Sawtooth,yq_sawtooth,saw
+倒海棠角,Begonia Angle,yq_begonia,htj
+車邊鏡,Beveled Plate Glass,yq_cbj,cbj
+修剪幕牆橫豎線,Curtainwall Scissor,yq_trimcurtainwall,tq
+圖塊/燈具連線,Blocks Connection,yq_linkblocks,lb
+鏈式選取,Get Linked Selection Sets,yq_lsxq,lsxq
+,,
+框內變虛線,Hidden in frames,yq_breakandhidden,bxx
+,,
+檢查是否封閉,Check If Closed,yq_chkclosed,bfb
+
+
+
+
+******[雜項面板快捷鍵u2],[Misc Panel u2],26,u2
+
+****【文字特殊】,[Text Extra]
+文字.普通匹配,Match Text Mode1,(yq_match_content0 1),sst1
+文字.單選匹配,Match Text Mode2,(yq_match_content0 2),sst2
+文字.多屬性匹配,Match Text Mode3,(yq_match_content0 3),sst3
+
+拷貝翻譯詞組,Copy & translate,yq_copytranslate,xfy
+,,
+;;; 對正方式:  "L" = acAlignmentLeft
+;;;            "C" = acAlignmentCenter
+;;;            "R" = acAlignmentRight
+;;;            "A" = acAlignmentAligned
+;;;            "M" = acAlignmentMiddle
+;;;            "F" = acAlignmentFit
+;;;            "TL" = acAlignmentTopLeft
+;;;            "TC" = acAlignmentTopCenter
+;;;            "TR" = acAlignmentTopRight
+;;;            "ML" = acAlignmentMiddleLeft
+;;;            "MC" = acAlignmentMiddleCenter
+;;;            "MR" = acAlignmentMiddleRight
+;;;            "BL" = acAlignmentBottomLeft
+;;;            "BC" = acAlignmentBottomCenter
+;;;            "BR" = acAlignmentBottomRight
+對正左下,Alignment Left,        (yq_text_alignment "L"),tt1
+對正中下,Alignment Center,      (yq_text_alignment "C"),tt2
+對正右下,Alignment Right,       (yq_text_alignment "R"),tt3
+對正中央,Alignment MiddleCenter,(yq_text_alignment "MC"),tt4
+
+****【算量小工具】,[Calculate Tools]
+文字放入粘貼板,Text to Clipboard,yq_text2clipboard,wz                       ;------> 這是快捷鍵例子: 加上",wz",這裡wz是快捷鍵
+單選文字追加Excel格,Text to Excel,yq_appendtext2cell,tce
+數字部分追加Excel格,Number to Excel,yq_appendnum2cell,nce
+尺寸數字追加Excel格,Dim to Excel,yq_appenddim2cell,ddce
+,,
+求面積/周長/牆面積,Get Area/Perimeter,yq_areawall,wmj
+,,
+點取面積輸出Excel當前格,Pickup Area to Excel,yq_pickArea2excel,dmj
+畫矩形取面積輸出Excel格,Rectangle Area to Excel,yq_RectangleArea,kmj
+選曲線取面積輸出Excel格,Select Area to Excel,yq_plineArea,smj
+文字區域面積輸出Excel格,Cell Area to Excel,yq_textCellArea,zmj
+選填充取面積輸出Excel格,Select harching to Excel,yq_hatchArea,hmj
+,,
+選曲線取周長輸出Excel格,Select Perimeter to Excel,yq_plinePerimeter,szc
+畫矩形取中線輸出Excel格,Rectangle Midline to Excel,yq_RectangleMidline,kzc
+
+****【圖層工具】,[Layer Tools]
+全圖改為指定圖層,All to A Layer,yq_all2layer,er0
+恢復顏色/線性/線寬,Recover Color/Ltype/LW,yq_00,00
+,,
+系統分層-全選,All Layers,(yq_xtft "QX" "" "*"),vqx      ; (yq_xtft)參數說明: 顯示名稱,需關閉圖層,需打開圖層
+系統分層-FF,FF Layers,(yq_xtft "FF" "fc*||rc*||em*||ar*||ie*||id*" "ff*||f-*"),vff
+系統分層-RC,RC Layers,(yq_xtft "RC" "ff*||fc*||em*||ar*||ie*||id*" "rc*"),vrc
+系統分層-FC,FC Layers,(yq_xtft "FC" "ff*||rc*||em*||ar*||ie*||id*" "fc*"),vfc
+系統分層-AR,AR Layers,(yq_xtft "AR" "ff*||rc*||fc*||em*||ie*||id*" "ar*"),var
+系統分層-EM,EM Layers,(yq_xtft "EM" "ff*||rc*||fc*||ar*||ie*||id*" "em*||f-*"),vem
+
+****【過濾選擇】,[Filter Select]
+圖元過濾選擇,Ename Filter,yq_enamefilter,xee
+圖層過濾選擇,Layer Filter,yq_layerfilter,xer
+顏色過濾選擇,Color Filter,yq_colorfilter,xcr
+,,
+圖元過濾刪除,Filter Erase,yq_filterErase,dee
+
+
+
+
+******[用戶面板快捷鍵u3],[User Panel u3],26,u3
+
+****【天正工具】,[Filter Erase]
+嘗試炸開天正加密塊,Crack Tch Protect,yq_tzcracker,tzx
+
+****【雜項其他】,[Misc Others]
+用戶配置,User Preferences,yqsys,pz                          ; ----->這是快捷鍵例子: 加上",pz",這裡pz是快捷鍵
+橫構造線,Horizontal xline,(command "xline" "h"),xh         ; ----->這是添加lisp程序的例子
+豎構造線,Vertical xline,(command "xline" "v"),xv
+十字構造線,Cross xline,yq_Crossxline,x2
+,,
+列表換字-管徑,Text List-DN,(yq_mlstbox "標題" (list "DN15 DN20 DN32 DN40 DN50 DN60 DN65 DN80 DN100 DN110 DN150 DN200 DN300" "Φ100 Φ200" "DE100 DE200" "D100 D200" "d100 d200")),dn
+列表換字-材料,Text List-Material,(yq_mlstbox "標題" (list "夾絲玻璃 鋼化玻璃 茶鏡 清鏡 超白玻 中空玻璃" "大理石 花崗石 牆面磚 防滑磚" "鏡面不銹鋼 髮絲不銹鋼 黑鈦不銹鋼")),clmc
+,,
+上邊線對齊,Top Aligning,(yq_setdq 2)(c:yq_alignment),dqt
+左邊線對齊,Left Aligning,(yq_setdq 3)(c:yq_alignment),dql
+右邊線對齊,Right Aligning,(yq_setdq 5)(c:yq_alignment),dqr
+下邊線對齊,Bottom Aligning,(yq_setdq 6)(c:yq_alignment),dqb
+
+****【AutoCAD命令】,[AutoCAD Commands]
+畫線段,Draw a Line,line
+三點弧,3 Points Arc,arc
+拷貝,Copy,copy
+刪除,Erase,erase

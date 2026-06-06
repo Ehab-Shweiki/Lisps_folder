@@ -1,0 +1,5 @@
+(defun timed (fn args label / t0 r)
+  (setq t0 (ms-now))
+  (setq r (apply fn args))
+  (princ (strcat "\n⏱️  " label ": " (itoa (- (ms-now) t0)) " ms" ))
+  r)
